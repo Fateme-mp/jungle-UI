@@ -258,7 +258,7 @@ section img #forest {
 }
 
 #fish6 {
-  top: 43rem;
+  top: 41rem;
   left: 212px;
   animation: float 3s ease infinite;
   /* animation-name: swim-loop;
@@ -488,7 +488,7 @@ section img #forest {
 }
 
 .hook {
-  position: absolute;
+  position: fixed;
   top: 0;
   left: 50%;
   width: 3px;

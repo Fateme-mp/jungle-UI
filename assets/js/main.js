@@ -42,7 +42,7 @@ const audioExitWater = new Audio("assets/audio/short-splash.mp3");
 
 const now = new Date();
 // const hour = now.getHours();
-const hour = 19;
+const hour = 9;
 const minutes = now.getMinutes();
 
 const apiKey = "2bc9ea7383d2c1930dc8c6773b773f22";
@@ -50,7 +50,7 @@ const city = "Sari";
 const url = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apiKey}&lang=fa&units=metric`;
 
 document.addEventListener("DOMContentLoaded", () => {
-  let weatherMain = "clouds";
+  let weatherMain = "overcast";
 
   // استعلام وضعیت هوا
   fetch(url)
@@ -500,7 +500,6 @@ function moveHookTo(targetHeight, step) {
   clearInterval(heightInterval);
 
   if (targetHeight > 0) {
-    hook.style.top = window.scrollY + "px";
     hook.style.display = "block";
     hookImage.style.display = "block";
   }
@@ -522,11 +521,6 @@ function moveHookTo(targetHeight, step) {
     } else {
       hookHeight -= step;
       if (hookHeight < targetHeight) hookHeight = targetHeight;
-
-      // let currentTop = parseInt(hook.style.top) || window.scrollY;
-      // currentTop -= step;
-      // if (currentTop < 0) currentTop = 0;
-      // hook.style.top = currentTop + "px";
     }
 
     hook.style.height = hookHeight + "px";
