@@ -28,6 +28,7 @@ const sectionHeight = section.offsetHeight;
 const windowHeight = window.innerHeight;
 const middlePoint = (sectionTop + sectionHeight) / 2;
 let fishCreated = false;
+let lastScroll = 0;
 let fishRight;
 let fishLeft;
 
@@ -230,7 +231,7 @@ window.addEventListener("scroll", function () {
 
   birdRight.style.transform = `translate(${value * 1.2}px, ${
     value * -0.5
-  }px) rotate(${value * 0.1}deg)`;
+    }px) rotate(${value * 0.1}deg)`;
   birdLeft.style.transform = `translate(${value * -1}px, ${value * 0.5}px)`;
 
   fishes.forEach((fish) => {
@@ -317,12 +318,21 @@ window.addEventListener("scroll", function () {
     fishRight.style.right = position * 1.2 + "px";
     fishLeft.style.left = position * 1.2 + "px";
 
+    if (scrollY > lastScroll) {
+      fishRight.style.transform = "rotateY(0deg)";
+      fishLeft.style.transform = "rotateY(0deg)";
+    }else{
+       fishRight.style.transform = "rotateY(180deg)";
+      fishLeft.style.transform = "rotateY(180deg)";
+    }
+
     if (position * 1.2 > window.innerWidth + 150) {
       fishRight.remove();
       fishLeft.remove();
 
       fishCreated = false;
     }
+    lastScroll = scrollY;
   }
 
   //زمانی که اسکرول به 80 درصد صفحه رسید

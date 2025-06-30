@@ -213,9 +213,6 @@ section img #forest {
   top: 36rem;
   left: 0px;
   animation: float 3s ease infinite;
-  /* animation-name: swim-loop;
-  animation-duration: 25s;
-  animation-delay: 0s; */
 }
 
 #fish2 {
@@ -252,27 +249,18 @@ section img #forest {
   top: 39rem;
   left: 456px;
   animation: float 3s ease infinite;
-  /* animation-name: swim-loop;
-  animation-duration: 26s;
-  animation-delay: 2s; */
 }
 
 #fish6 {
   top: 41rem;
   left: 212px;
   animation: float 3s ease infinite;
-  /* animation-name: swim-loop;
-  animation-duration: 29s;
-  animation-delay: 4s; */
 }
 
 #fish7 {
   top: 40rem;
   left: -110px;
   animation: float 3s ease infinite;
-  /* animation-name: swim-loop;
-  animation-duration: 27s;
-  animation-delay: 6s; */
 }
 
 #fish8 {
@@ -295,23 +283,6 @@ section img #forest {
     transform: translateY(-10px);
   }
 }
-/* 
-@keyframes swim-loop {
-  0% {
-    transform: translateX(-150px) translateY(0);
-    opacity: 0;
-  }
-  10% {
-    opacity: 1;
-  }
-  50% {
-    transform: translateX(50vw) translateY(-10px);
-  }
-  100% {
-    transform: translateX(110vw) translateY(0);
-    opacity: 0;
-  }
-} */
 
 @keyframes swim-loop-reverse {
   0% {
@@ -353,16 +324,6 @@ section img #forest {
   }
 }
 
-@keyframes wave {
-  0%,
-  100% {
-    transform: translateY(0);
-  }
-  50% {
-    transform: translateY(-20px);
-  }
-}
-
 .fish-container {
   position: relative;
   width: 100%;
@@ -378,7 +339,6 @@ section img #forest {
   position: absolute;
   left: -150px;
   transition: left 3s linear;
-  animation: wave 3s ease infinite;
 }
 
 .fish-right {
@@ -387,7 +347,6 @@ section img #forest {
   position: absolute;
   right: -150px;
   transition: right 3s linear;
-  animation: wave 3s ease infinite;
 }
 
 #text {
@@ -509,5 +468,3 @@ section img #forest {
   transform: translateX(-50%);
   z-index: 10;
 }
-
-
