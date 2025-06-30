@@ -50,7 +50,7 @@ const city = "Sari";
 const url = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apiKey}&lang=fa&units=metric`;
 
 document.addEventListener("DOMContentLoaded", () => {
-  let weatherMain = "overcast";
+  let weatherMain = "clouds";
 
   // استعلام وضعیت هوا
   fetch(url)
@@ -254,7 +254,7 @@ window.addEventListener("scroll", function () {
   const volume = Math.min(1, Math.max(0, 0.5 - scrollY / splashPoint));
   currentAudio.volume = volume;
 
-  if (scrollY >= splashPoint && !splashPlayed) {
+  if (scrollY >= splashPoint && !splashPlayed && isPlaying) {
     currentAudio.pause();
     isPlaying = false;
 
@@ -277,7 +277,7 @@ window.addEventListener("scroll", function () {
     );
   }
 
-  if (scrollY < splashPoint && splashPlayed) {
+  if (scrollY < splashPoint && splashPlayed && isPlaying) {
     splashPlayed = false;
     audioUnderwater.pause();
     isPlaying = false;
